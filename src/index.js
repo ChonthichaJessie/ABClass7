@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+import { CLIENT_ID } from './Config/Config'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <PayPalScriptProvider options={{ "client-id": CLIENT_ID }}>
+      <App />
+    </PayPalScriptProvider>
   </React.StrictMode>
 );
 

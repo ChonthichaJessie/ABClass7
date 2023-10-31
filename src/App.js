@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import React, { useState } from "react";
+import { Popup } from "./components/Popup/Popup";
 import './App.css';
+import { Questions } from "./components/Questions/Questions"
+import { questionData } from "./questionlist";
+import { UserFeedback } from "./components/UserFeedback/UserFeedback";
+import { UserSupport } from "./components/UserSupport/UserSupport";
 
-function App() {
+
+const App = () => {
+  //Make welcome popup always open
+  const [open, setOpen] = useState(true);
+  //Open feedback popup
+  const [showFeedback, setShowFeedback] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {open && <Popup text="Welcome to Alberta Driver's sknowledge test Class7" closePopup={() => setOpen(false)} />}
+      <Questions questions={questionData} />
+      <button onClick={() => setShowFeedback(true)}>Feedback us</button>
+      {showFeedback && <UserFeedback closeFeedback={() => setShowFeedback(false)} />}
+      <UserSupport />
     </div>
   );
-}
+};
+
+
+
+
+
 
 export default App;
