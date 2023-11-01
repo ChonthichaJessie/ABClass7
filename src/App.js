@@ -20,7 +20,7 @@ const App = () => {
         <HomeImage src={`./images/Home.jpg`} alt="Alberta Driving Class7 Practice" />
       </ImageColumn>
       <Content>
-        {open && <Popup text="Welcome to Alberta Driver's sknowledge test Class7" closePopup={() => setOpen(false)} />}
+        {open && <Popup text="Welcome to Alberta Driver's knowledge test Class 7" closePopup={() => setOpen(false)} />}
         <Questions questions={questionData} />
         <ScrollingButtons>
           <UserSupport />
