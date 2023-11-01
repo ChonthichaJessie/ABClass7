@@ -1,4 +1,3 @@
-import './Questions.css';
 import React, { useState } from "react";
 import SingleQuestion from '../SingleQuestion/SingleQuestion';
 

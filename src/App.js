@@ -5,7 +5,7 @@ import { Questions } from "./components/Questions/Questions"
 import { questionData } from "./questionlist";
 import { UserFeedback } from "./components/UserFeedback/UserFeedback";
 import { UserSupport } from "./components/UserSupport/UserSupport";
-
+import styled from 'styled-components';
 
 const App = () => {
   //Make welcome popup always open
@@ -14,17 +14,23 @@ const App = () => {
   const [showFeedback, setShowFeedback] = useState(false);
 
   return (
-    <div>
+    <Wrapper>
       {open && <Popup text="Welcome to Alberta Driver's sknowledge test Class7" closePopup={() => setOpen(false)} />}
       <Questions questions={questionData} />
-      <button onClick={() => setShowFeedback(true)}>Feedback us</button>
+      <FeedbackButton onClick={() => setShowFeedback(true)}>Feedback us</FeedbackButton>
       {showFeedback && <UserFeedback closeFeedback={() => setShowFeedback(false)} />}
       <UserSupport />
-    </div>
+    </Wrapper>
   );
 };
 
+const Wrapper = styled.div`
+`;
 
+const FeedbackButton = styled.button`
+  background-color: red;
+  margin-bottom: 20px;
+`;
 
 
 
