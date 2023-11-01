@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form, Container, Header } from 'semantic-ui-react';
 import axios from 'axios';
+import styled from 'styled-components';
 
 export const UserFeedback = ({ closeFeedback }) => {
 	const [name, setName] = useState('');
@@ -22,29 +23,37 @@ export const UserFeedback = ({ closeFeedback }) => {
 
 	return (
 		<Container fluid className="container">
-			<button onClick={closeFeedback}>Close X</button>
-			<Header as="h2">What can we improve</Header>
+			<CloseRow>
+				<WelcomeText>What can we improve</WelcomeText>
+				<CloseButton onClick={closeFeedback}>x</CloseButton>
+			</CloseRow>
 			<Form className="form">
 				<Form.Field>
-					<label>Name</label>
-					<input
+					<Name>
+					<NameLabel>Name</NameLabel>
+					<NameInput
 						placeholder="Enter your Name"
 						onChange={(e) => setName(e.target.value)}
 					/>
+					</Name>
 				</Form.Field>
 				<Form.Field>
-					<label>Email</label>
-					<input
+					<Email>
+					<EmailLabel>Email</EmailLabel>
+					<EmailInput
 						placeholder="Enter your Email"
 						onChange={(e) => setEmail(e.target.value)}
 					/>
+					</Email>
 				</Form.Field>
 				<Form.Field>
-					<label>Message</label>
-					<input
+					<Message>
+					<MessageLabel>Message</MessageLabel>
+					<MessageInput
 						placeholder="Enter your message"
 						onChange={(e) => setMessage(e.target.value)}
 					/>
+					</Message>
 				</Form.Field>
 
 				<Button color="blue" type="submit" onClick={handleSubmit}>
@@ -54,5 +63,74 @@ export const UserFeedback = ({ closeFeedback }) => {
 		</Container>
 	);
 }
+
+const CloseRow = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+`;
+
+const CloseButton = styled.span`
+    font-size: 15pt;
+    font-weight: 200;
+	position: fixed;
+	right: 5px;
+`;
+
+const WelcomeText = styled.header`
+	font-family: din-round,sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    margin: 3px;	
+`;
+
+const Name = styled.div`
+display: flex;
+flex-direction: row;
+`;
+const Email = styled.div`
+display: flex;
+flex-direction: row;
+`;
+const Message = styled.div`
+display: flex;
+flex-direction: column;
+`;
+
+const NameLabel = styled.label`
+font-family: din-round,sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    margin: 3px;
+	flex: 0;
+`;
+const NameInput = styled.input`
+	flex: 1;
+	margin-bottom: 5px;
+`;
+
+const EmailLabel = styled.label`
+font-family: din-round,sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    margin: 3px;
+	flex: 0;
+`;
+const EmailInput = styled.input`
+	flex: 1;
+	margin-bottom: 5px;
+`;
+
+const MessageLabel = styled.label`
+font-family: din-round,sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    margin: 3px;
+`;
+const MessageInput = styled.textarea`
+height: 50px;
+margin-bottom: 5px;
+`;
+
 
 export default UserFeedback;

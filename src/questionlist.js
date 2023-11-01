@@ -283,7 +283,7 @@ export const questionData = [
     },
     {
         "id": 48,
-        "question": "Unless otherwise permitted, what lane musta drib=ver be in to turn left from a one-way road?",
+        "question": "Unless otherwise permitted, what lane musta driver be in to turn left from a one-way road?",
         "answer": "The left lane nearest the left curb",
         "picture": ""
     },

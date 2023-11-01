@@ -7,38 +7,73 @@ export const UserSupport = () => {
 
     if (!show) {
         return (
-            <div className="wrapper">
-                <button className='buy-btn' type="submit" onClick={() => setShow(true)}>
-                    Support us
-                </button>
-            </div>
-
+            <HomeSupportUsButton className='buy-btn' type="submit" onClick={() => setShow(true)}>
+                Support us
+            </HomeSupportUsButton>
         )
     }
 
     return (
         <Wrapper>
-            <CloseButton onClick={() => setShow(false)}>+</CloseButton>
+            <CloseRow>
+                <CloseButton onClick={() => setShow(false)}>x</CloseButton>
+            </CloseRow>
             <Checkout />
         </Wrapper>
     );
-
-    
-
 };
 
 const Wrapper = styled.div`
-    margin-left: 3%;
-    margin-right: 3%;
-    
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+`;
+
+const CloseRow = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 25px;
 `;
 
 const CloseButton = styled.span`
-    font-size: 30px;
+    font-size: 15pt;
     font-weight: 200;
+    margin-bottom: 3px;
+    position: fixed;
+    right: 5px;
+`;
+
+const HomeSupportUsButton = styled.button`
+    appearance: button;
+    background-color: #1899D6;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
     display: inline-block;
-    transform: rotate(45deg);
-    float : right;
+    font-family: din-round,sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    outline: none;
+    overflow: visible;
+    padding: 13px 16px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 212.25px;
+    height: 100%;
 `;
 
 export default UserSupport;

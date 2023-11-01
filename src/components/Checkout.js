@@ -3,7 +3,7 @@ import { PayPalButtons } from "@paypal/react-paypal-js";
 
 const Checkout = () => {
     const [success, setSuccess] = useState(false);
-    const [ErrorMessage, setErrorMessage] = useState("");
+    // const [ErrorMessage, setErrorMessage] = useState("");
     const [orderID, setOrderID] = useState(false);
 
     // creates a paypal order
@@ -27,22 +27,22 @@ const Checkout = () => {
     // check Approval
     const onApprove = (data, actions) => {
         return actions.order.capture().then(function (details) {
-            const { payer } = details;
+            // const { payer } = details;
             setSuccess(true);
         });
     };
 
     //capture likely error
-    const onError = (data, actions) => {
-        setErrorMessage("An Error occured with your payment ");
-    };
+    // const onError = (data, actions) => {
+    //     setErrorMessage("An Error occured with your payment ");
+    // };
 
     useEffect(() => {
         if (success) {
             alert("Payment successful!!");
             console.log('Order successful . Your order id is--', orderID);
         }
-    }, [success]);
+    }, [success, orderID]);
 
     return (
         <div>
