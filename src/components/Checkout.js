@@ -1,27 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { PayPalButtons } from "@paypal/react-paypal-js";
+import styled from 'styled-components';
+
+const dollarOptions = [2, 5, 10, 15, 20, 25, 30]
 
 const Checkout = () => {
+    const [dollars, setDollars] = useState(5);
     const [success, setSuccess] = useState(false);
     // const [ErrorMessage, setErrorMessage] = useState("");
     const [orderID, setOrderID] = useState(false);
 
     // creates a paypal order
-    const createOrder = (data, actions) => {
-        return actions.order.create({
+    const createOrder = async (data, actions) => {
+        const id = (actions.order.create({
             purchase_units: [
                 {
-                    description: "Sunflower",
+                    description: `Donate ${dollars}`,
                     amount: {
                         currency_code: "USD",
-                        value: 20,
+                        value: dollars,
                     },
                 },
             ],
-        }).then((orderID) => {
-            setOrderID(orderID);
-            return orderID;
-        });
+        }))
+        setOrderID(id);
+        return id;
     };
 
     // check Approval
@@ -46,7 +49,11 @@ const Checkout = () => {
 
     return (
         <div>
+            Amount: <DollarSelect onChange={(e) => setDollars(Number(e.target.value))}>
+                {dollarOptions.map(val => (<option value={val} key={val} selected={dollars === val}>${val} USD</option>))}
+            </DollarSelect>
             <PayPalButtons
+                key={dollars}
                 style={{ layout: "vertical" }}
                 createOrder={createOrder}
                 onApprove={onApprove}
@@ -54,5 +61,9 @@ const Checkout = () => {
         </div>
     );
 }
+
+const DollarSelect = styled.select`
+    margin-bottom: 5px;
+`;
 
 export default Checkout
