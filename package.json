@@ -1,7 +1,7 @@
 {
   "name": "drivingtestapp",
   "version": "0.1.0",
-  "homepage": "https://ChonthichaJessie.github.io/ABDrivingTest_ver01",
+  "homepage": "https://ChonthichaJessie.github.io",
   "private": true,
   "dependencies": {
     "@mui/material": "^5.14.16",
