@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 // import UserSupport from '../UserSupport/UserSupport';
 import styled from 'styled-components';
-import Checkout from "../Checkout";
+//Cancel using paypal
+// import Checkout from "../Checkout";
 
 export const Popup = ({ text, closePopup }) => {
   const [openPaypal, setOpenPaypal] = useState(false)
@@ -14,7 +15,11 @@ export const Popup = ({ text, closePopup }) => {
         </CloseRow>
         <Heading>{text}</Heading>
         <Content>
-          {openPaypal ? <Checkout /> : <SupportUsButton onClick={() => setOpenPaypal(true)}>Support us</SupportUsButton>}
+          {/* Cancel using paypal */}
+          {/* {openPaypal ? <Checkout /> : <SupportUsButton onClick={() => setOpenPaypal(true)}>Support us</SupportUsButton>} */}
+          <a target="_blank" href = "https://buy.stripe.com/cN2bML22e1Fs0yAeUU">
+          <SupportUsButton>Support Us</SupportUsButton>
+          </a>
         </Content>
       </Box>
     </Background>

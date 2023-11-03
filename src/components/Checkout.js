@@ -54,7 +54,7 @@ const Checkout = () => {
             </DollarSelect>
             <PayPalButtons
                 key={dollars}
-                style={{ layout: "vertical" }}
+                style={{ layout: "vertical", tagline: "false" }}
                 createOrder={createOrder}
                 onApprove={onApprove}
             />
