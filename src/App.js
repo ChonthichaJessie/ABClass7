@@ -99,7 +99,7 @@ const ScrollingButtons = styled.div`
 display: flex;
 flex-direction: column;
 position: fixed;
-top: 60%;
+bottom: 5%;
 right: 3px;
 `;
 
