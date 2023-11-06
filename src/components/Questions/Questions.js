@@ -19,7 +19,7 @@ export const Questions = ({ questions }) => {
   const { question, goNext, goPrev, hasNext, hasPrev } = useQuestion(questions)
 
   return (
-    <div className="question-container">
+    <div>
       <SingleQuestion data={question} />
       {hasPrev && <BackButton onClick={goPrev}>Back</BackButton>}
       {hasNext && <NextButton onClick={goNext}>Next</NextButton>}
@@ -57,7 +57,6 @@ const BackButton = styled.button`
     vertical-align: middle;
     white-space: nowrap;
     width: 100px;
-    height: 100%;
 `;
 
 const NextButton = styled.button`
@@ -90,7 +89,6 @@ const NextButton = styled.button`
     vertical-align: middle;
     white-space: nowrap;
     width: 100px;
-    height: 100%;
 `;
 
 export default Questions;

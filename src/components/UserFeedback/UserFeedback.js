@@ -8,8 +8,6 @@ export const UserFeedback = ({ closeFeedback }) => {
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
 
-
-
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
@@ -22,37 +20,37 @@ export const UserFeedback = ({ closeFeedback }) => {
 	}
 
 	return (
-		<Container fluid className="container">
+		<Container>
 			<CloseRow>
 				<WelcomeText>What can we improve</WelcomeText>
 				<CloseButton onClick={closeFeedback}>x</CloseButton>
 			</CloseRow>
-			<Form className="form">
+			<Form >
 				<Form.Field>
 					<Name>
-					<NameLabel>Name</NameLabel>
-					<NameInput
-						placeholder="Enter your Name"
-						onChange={(e) => setName(e.target.value)}
-					/>
+						<NameLabel>Name</NameLabel>
+						<NameInput
+							placeholder="Enter your Name"
+							onChange={(e) => setName(e.target.value)}
+						/>
 					</Name>
 				</Form.Field>
 				<Form.Field>
 					<Email>
-					<EmailLabel>Email</EmailLabel>
-					<EmailInput
-						placeholder="Enter your Email"
-						onChange={(e) => setEmail(e.target.value)}
-					/>
+						<EmailLabel>Email</EmailLabel>
+						<EmailInput
+							placeholder="Enter your Email"
+							onChange={(e) => setEmail(e.target.value)}
+						/>
 					</Email>
 				</Form.Field>
 				<Form.Field>
 					<Message>
-					<MessageLabel>Message</MessageLabel>
-					<MessageInput
-						placeholder="Enter your message"
-						onChange={(e) => setMessage(e.target.value)}
-					/>
+						<MessageLabel>Message</MessageLabel>
+						<MessageInput
+							placeholder="Enter your message"
+							onChange={(e) => setMessage(e.target.value)}
+						/>
 					</Message>
 				</Form.Field>
 
@@ -67,14 +65,13 @@ export const UserFeedback = ({ closeFeedback }) => {
 const CloseRow = styled.div`
     display: flex;
     flex-direction: row;
+	justify-content: space-between;
     margin-bottom: 5px;
 `;
 
 const CloseButton = styled.span`
     font-size: 15pt;
     font-weight: 200;
-	position: fixed;
-	right: 5px;
 `;
 
 const WelcomeText = styled.header`
@@ -85,51 +82,56 @@ const WelcomeText = styled.header`
 `;
 
 const Name = styled.div`
-display: flex;
-flex-direction: row;
+	display: flex;
+	flex-direction: row;
 `;
+
 const Email = styled.div`
-display: flex;
-flex-direction: row;
+	display: flex;
+	flex-direction: row;
 `;
+
 const Message = styled.div`
-display: flex;
-flex-direction: column;
+	display: flex;
+	flex-direction: column;
 `;
 
 const NameLabel = styled.label`
-font-family: din-round,sans-serif;
+	font-family: din-round,sans-serif;
     font-size: 15px;
     font-weight: 300;
     margin: 3px;
 	flex: 0;
 `;
+
 const NameInput = styled.input`
 	flex: 1;
 	margin-bottom: 5px;
 `;
 
 const EmailLabel = styled.label`
-font-family: din-round,sans-serif;
+	font-family: din-round,sans-serif;
     font-size: 15px;
     font-weight: 300;
     margin: 3px;
 	flex: 0;
 `;
+
 const EmailInput = styled.input`
 	flex: 1;
 	margin-bottom: 5px;
 `;
 
 const MessageLabel = styled.label`
-font-family: din-round,sans-serif;
+	font-family: din-round,sans-serif;
     font-size: 15px;
     font-weight: 300;
     margin: 3px;
 `;
+
 const MessageInput = styled.textarea`
-height: 50px;
-margin-bottom: 5px;
+	height: 50px;
+	margin-bottom: 5px;
 `;
 
 
