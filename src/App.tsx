@@ -18,8 +18,8 @@ const App = () => {
   return (
     <Wrapper>
       <ImageColumn>
-        <HomeText src={`../public/images/HomeText.png`} alt="Alberta Driving Class7 Practice" />
-        <HomeImage src={`../public/images/Home.jpg`} alt="Alberta Driving Class7 Practice" />
+        <HomeText src='./images/HomeText.png' alt="Alberta Driving Class7 Practice" />
+        <HomeImage src='./images/Home.jpg' alt="Alberta Driving Class7 Practice" />
       </ImageColumn>
       <Content>
         {open && <Popup text="Welcome to Alberta Driver's knowledge test Class 7" closePopup={() => setOpen(false)} />}

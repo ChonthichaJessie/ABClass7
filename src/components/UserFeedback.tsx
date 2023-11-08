@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Button, Form, Container, Header } from 'semantic-ui-react';
+import { Button, Form, Container } from 'semantic-ui-react';
 import axios from 'axios';
 import styled from 'styled-components';
 
 type UserFeedbackProps = {
-	closeFeedback(): void,
+	closeFeedback(): void
 }
 
 export const UserFeedback = ({ closeFeedback }: UserFeedbackProps) => {
@@ -12,7 +12,7 @@ export const UserFeedback = ({ closeFeedback }: UserFeedbackProps) => {
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
 
-	const handleSubmit = (e) => {
+	const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 		e.preventDefault();
 
 		const objt = { name, email, message };

@@ -1,52 +1,12 @@
-import { useState } from 'react';
-import Checkout from "./Checkout";
 import styled from 'styled-components';
 import React from 'react';
 
 export const UserSupport = () => {
-    const [show, setShow] = useState(false);
-
-    if (!show) {
-        return (
-            //Cancel using paypal
-            // <HomeSupportUsButton className='buy-btn' type="submit" onClick={() => setShow(true)}>
-            //     Support us
-            // </HomeSupportUsButton>
-            <a target="_blank" href = "https://buy.stripe.com/cN2bML22e1Fs0yAeUU"><HomeSupportUsButton>Support us</HomeSupportUsButton></a>
-
-        )
-    }
-
     return (
-        <Wrapper>
-            <CloseRow>
-                <CloseButton onClick={() => setShow(false)}>x</CloseButton>
-            </CloseRow>
-            <Checkout />
-        </Wrapper>
-    );
+        <a target="_blank" rel="noreferrer" href="https://buy.stripe.com/cN2bML22e1Fs0yAeUU"><HomeSupportUsButton>Support us</HomeSupportUsButton></a>
+    )
+
 };
-
-const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    padding-left: 10px;
-    padding-right: 10px;
-`;
-
-const CloseRow = styled.div`
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 25px;
-`;
-
-const CloseButton = styled.span`
-    font-size: 15pt;
-    font-weight: 200;
-    margin-bottom: 3px;
-    position: fixed;
-    right: 5px;
-`;
 
 const HomeSupportUsButton = styled.button`
     appearance: button;

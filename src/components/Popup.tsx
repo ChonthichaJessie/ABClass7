@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from 'styled-components';
 
 type PopupProps = {
@@ -7,8 +7,6 @@ type PopupProps = {
 }
 
 export const Popup = ({ text, closePopup }: PopupProps) => {
-  const [openPaypal, setOpenPaypal] = useState(false)
-
   return (
     <Background>
       <Box>
@@ -17,7 +15,7 @@ export const Popup = ({ text, closePopup }: PopupProps) => {
         </CloseRow>
         <Heading>{text}</Heading>
         <Content>
-          <a target="_blank" href="https://buy.stripe.com/cN2bML22e1Fs0yAeUU">
+          <a target="_blank" rel="noreferrer" href="https://buy.stripe.com/cN2bML22e1Fs0yAeUU">
             <SupportUsButton>Support Us</SupportUsButton>
           </a>
         </Content>
