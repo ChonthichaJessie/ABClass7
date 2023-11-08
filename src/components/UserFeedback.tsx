@@ -3,7 +3,11 @@ import { Button, Form, Container, Header } from 'semantic-ui-react';
 import axios from 'axios';
 import styled from 'styled-components';
 
-export const UserFeedback = ({ closeFeedback }) => {
+type UserFeedbackProps = {
+	closeFeedback(): void,
+}
+
+export const UserFeedback = ({ closeFeedback }: UserFeedbackProps) => {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
@@ -30,29 +34,29 @@ export const UserFeedback = ({ closeFeedback }) => {
 			<Form className="form">
 				<Form.Field>
 					<Name>
-					<NameLabel>Name</NameLabel>
-					<NameInput
-						placeholder="Enter your Name"
-						onChange={(e) => setName(e.target.value)}
-					/>
+						<NameLabel>Name</NameLabel>
+						<NameInput
+							placeholder="Enter your Name"
+							onChange={(e) => setName(e.target.value)}
+						/>
 					</Name>
 				</Form.Field>
 				<Form.Field>
 					<Email>
-					<EmailLabel>Email</EmailLabel>
-					<EmailInput
-						placeholder="Enter your Email"
-						onChange={(e) => setEmail(e.target.value)}
-					/>
+						<EmailLabel>Email</EmailLabel>
+						<EmailInput
+							placeholder="Enter your Email"
+							onChange={(e) => setEmail(e.target.value)}
+						/>
 					</Email>
 				</Form.Field>
 				<Form.Field>
 					<Message>
-					<MessageLabel>Message</MessageLabel>
-					<MessageInput
-						placeholder="Enter your message"
-						onChange={(e) => setMessage(e.target.value)}
-					/>
+						<MessageLabel>Message</MessageLabel>
+						<MessageInput
+							placeholder="Enter your message"
+							onChange={(e) => setMessage(e.target.value)}
+						/>
 					</Message>
 				</Form.Field>
 

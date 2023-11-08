@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import SingleQuestion from '../SingleQuestion/SingleQuestion';
+import SingleQuestion from './SingleQuestion';
 import styled from 'styled-components';
+import { Question } from "../model/types";
 
-const useQuestion = (questions) => {
+const useQuestion = (questions: Question[]) => {
   const [index, setIndex] = useState(0);
   const question = questions[index]
   const hasPrev = index > 0
@@ -15,7 +16,11 @@ const useQuestion = (questions) => {
   }
 }
 
-export const Questions = ({ questions }) => {
+type QuestionsProps = {
+  questions: Question[]
+}
+
+export const Questions = ({ questions }: QuestionsProps) => {
   const { question, goNext, goPrev, hasNext, hasPrev } = useQuestion(questions)
 
   return (

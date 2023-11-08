@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import Checkout from "../Checkout";
+import Checkout from "./Checkout";
 import styled from 'styled-components';
+import React from 'react';
 
 export const UserSupport = () => {
     const [show, setShow] = useState(false);

@@ -1,7 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.questionData = void 0;
-exports.questionData = [
+import { Question } from "./model/types";
+
+export const questionData: Question[] = [
     {
         "id": 1,
         "question": "Unless otherwise posted, what is the basic speed limit outside a city, town or village on a primary highway?",
@@ -607,47 +606,55 @@ exports.questionData = [
         "question": "When approaching an intersection displayed a steady yellow traffic light:",
         "answer": "Stop before the intersection unless the stop cannot be made in safety",
         "picture": ""
-    },
+    }
+    ,
     {
         "id": 102,
         "question": "A solid yellow line together with a broken yellow line marked on the centre of a highway means:",
         "answer": "If the broken line is on your side, passing is permitted",
         "picture": ""
-    },
+    }
+    ,
     {
         "id": 103,
         "question": "At 9:00 AM on a school day, what is the maximum speed permitted in a school zone in rural area, unless otherwise posted?",
         "answer": "30 km/h",
         "picture": ""
-    },
+    }
+    ,
     {
         "id": 104,
         "question": "On a two-lane highway, when passing other vehicle travelling in the same direction, a driver:",
         "answer": "Should pass on the left when safe",
         "picture": ""
-    },
+    }
+    ,
     {
         "id": 105,
         "question": "This sign indicates:",
         "answer": "Hospital service",
         "picture": "Q105.webp"
-    },
+    }
+    ,
     {
         "id": 106,
         "question": "What minimum distance from a fire hydrant must vehicle be parked?",
         "answer": "5 meters",
         "picture": ""
-    },
+    }
+    ,
     {
         "id": 107,
         "question": "This sign indicates:",
         "answer": "Construction sign, people working ahead",
         "picture": "Q107.jpeg"
-    },
+    }
+    ,
     {
         "id": 108,
         "question": "If a driver is being followed by a vehicle that is attempting to pass on a two-way road, the driver should:",
         "answer": "Stay in the lane and move to the right portion of the lane",
         "picture": ""
     }
-];
+
+]

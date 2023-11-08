@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 // import UserSupport from '../UserSupport/UserSupport';
 import styled from 'styled-components';
-import Checkout from "../Checkout";
+import Checkout from "./Checkout";
 
-export const Popup = ({ text, closePopup }) => {
+type PopupProps = {
+  text: string,
+  closePopup(): void,
+}
+
+export const Popup = ({ text, closePopup }: PopupProps) => {
   const [openPaypal, setOpenPaypal] = useState(false)
 
   return (

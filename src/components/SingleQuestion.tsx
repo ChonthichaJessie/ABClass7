@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styled from 'styled-components';
+import { Question } from "../model/types";
 
-const SingleQuestion = ({ data }) => {
+type SingleQuestionProps = {
+    data: Question
+}
+const SingleQuestion = ({ data }: SingleQuestionProps) => {
     const [answer, setAnswer] = useState(false);
     const showAnswer = () => setAnswer(true);
 
