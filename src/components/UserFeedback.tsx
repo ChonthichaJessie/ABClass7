@@ -12,8 +12,6 @@ export const UserFeedback = ({ closeFeedback }: UserFeedbackProps) => {
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
 
-
-
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
@@ -26,12 +24,12 @@ export const UserFeedback = ({ closeFeedback }: UserFeedbackProps) => {
 	}
 
 	return (
-		<Container fluid className="container">
+		<Container>
 			<CloseRow>
 				<WelcomeText>What can we improve</WelcomeText>
 				<CloseButton onClick={closeFeedback}>x</CloseButton>
 			</CloseRow>
-			<Form className="form">
+			<Form >
 				<Form.Field>
 					<Name>
 						<NameLabel>Name</NameLabel>
@@ -71,14 +69,13 @@ export const UserFeedback = ({ closeFeedback }: UserFeedbackProps) => {
 const CloseRow = styled.div`
     display: flex;
     flex-direction: row;
+	justify-content: space-between;
     margin-bottom: 5px;
 `;
 
 const CloseButton = styled.span`
     font-size: 15pt;
     font-weight: 200;
-	position: fixed;
-	right: 5px;
 `;
 
 const WelcomeText = styled.header`
@@ -89,51 +86,56 @@ const WelcomeText = styled.header`
 `;
 
 const Name = styled.div`
-display: flex;
-flex-direction: row;
+	display: flex;
+	flex-direction: row;
 `;
+
 const Email = styled.div`
-display: flex;
-flex-direction: row;
+	display: flex;
+	flex-direction: row;
 `;
+
 const Message = styled.div`
-display: flex;
-flex-direction: column;
+	display: flex;
+	flex-direction: column;
 `;
 
 const NameLabel = styled.label`
-font-family: din-round,sans-serif;
+	font-family: din-round,sans-serif;
     font-size: 15px;
     font-weight: 300;
     margin: 3px;
 	flex: 0;
 `;
+
 const NameInput = styled.input`
 	flex: 1;
 	margin-bottom: 5px;
 `;
 
 const EmailLabel = styled.label`
-font-family: din-round,sans-serif;
+	font-family: din-round,sans-serif;
     font-size: 15px;
     font-weight: 300;
     margin: 3px;
 	flex: 0;
 `;
+
 const EmailInput = styled.input`
 	flex: 1;
 	margin-bottom: 5px;
 `;
 
 const MessageLabel = styled.label`
-font-family: din-round,sans-serif;
+	font-family: din-round,sans-serif;
     font-size: 15px;
     font-weight: 300;
     margin: 3px;
 `;
+
 const MessageInput = styled.textarea`
-height: 50px;
-margin-bottom: 5px;
+	height: 50px;
+	margin-bottom: 5px;
 `;
 
 

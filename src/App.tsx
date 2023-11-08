@@ -8,6 +8,7 @@ import { UserSupport } from "./components/UserSupport";
 import styled from "styled-components";
 
 
+// USE COMMAND npm run dev instead of npm start ********
 const App = () => {
   //Make welcome popup always open
   const [open, setOpen] = useState(true);
@@ -25,6 +26,7 @@ const App = () => {
         <Questions questions={questionData} />
         <ScrollingButtons>
           <UserSupport />
+          <Space />
           <FeedbackButton onClick={() => setShowFeedback(true)}>Give feedback</FeedbackButton>
           {showFeedback && <UserFeedback closeFeedback={() => setShowFeedback(false)} />}
         </ScrollingButtons>
@@ -38,6 +40,7 @@ const Wrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
+  height: 100%;
 `;
 
 const ImageColumn = styled.div`
@@ -64,50 +67,55 @@ const HomeImage = styled.img`
 
 const Content = styled.div`
   flex: 3;
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+  margin-bottom: 10px;
 `;
+const Space = styled.div`
+  height: 10px;
+`;
+
 const FeedbackButton = styled.button`
   appearance: button;
-    background-color: #1899D6;
-    border: solid transparent;
-    border-radius: 16px;
-    border-width: 0 0 4px;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-block;
-    font-family: din-round,sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: .8px;
-    line-height: 20px;
-    margin-bottom: 5px;
-    outline: none;
-    overflow: visible;
-    padding: 13px 16px;
-    text-align: center;
-    text-transform: uppercase;
-    touch-action: manipulation;
-    transform: translateZ(0);
-    transition: filter .2s;
-    user-select: none;
-    -webkit-user-select: none;
-    vertical-align: middle;
-    white-space: nowrap;
-    width: 212.25px;
-    height: 100%;
+  background-color: #1899D6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin-bottom: 5px;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 212.25px;
 `;
+
 const ScrollingButtons = styled.div`
-display: flex;
-flex-direction: column;
-position: fixed;
-top: 60%;
-right: 3px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: 20px;
+  z-index: 1;
+  background-color: white;
 `;
-
-
-
-
-
-
 
 export default App;

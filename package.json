@@ -1,16 +1,9 @@
 {
   "name": "drivingtestapp",
   "version": "0.1.0",
-  "homepage": "https://ChonthichaJessie.github.io/ABDrivingTest_ver01",
+  "homepage": "https://ChonthichaJessie.github.io",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^29.5.8",
-    "@types/node": "^20.9.0",
-    "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.15",
     "axios": "^1.6.0",
     "browserify": "^17.0.0",
     "file-loader": "^6.2.0",
@@ -18,18 +11,35 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-popper": "^2.3.0",
-    "react-router-dom": "^6.17.0",
-    "react-scripts": "5.0.1",
+    "react-router-dom": "^6.18.0",
     "save-dev": "^0.0.1-security",
     "semantic-ui-react": "^2.1.4",
     "styled-components": "^6.1.0",
     "url-loader": "^4.1.1",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^29.5.8",
+    "@types/node": "^20.9.0",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "gh-pages": "^6.0.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^5.2.2"
+  },
+  "overrides": {
+    "@typescript-eslint/typescript-estree": "^5.57.1",
+    "fork-ts-checker-webpack-plugin": "^6.5.3",
+    "typescript": "^5.2.2"
+  },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
+    "dev": "PUBLIC_URL=/ npm start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -51,9 +61,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^6.0.0",
-    "typescript": "^5.2.2"
   }
 }

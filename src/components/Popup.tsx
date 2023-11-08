@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-// import UserSupport from '../UserSupport/UserSupport';
 import styled from 'styled-components';
-import Checkout from "./Checkout";
 
 type PopupProps = {
   text: string,
@@ -19,7 +17,9 @@ export const Popup = ({ text, closePopup }: PopupProps) => {
         </CloseRow>
         <Heading>{text}</Heading>
         <Content>
-          {openPaypal ? <Checkout /> : <SupportUsButton onClick={() => setOpenPaypal(true)}>Support us</SupportUsButton>}
+          <a target="_blank" href="https://buy.stripe.com/cN2bML22e1Fs0yAeUU">
+            <SupportUsButton>Support Us</SupportUsButton>
+          </a>
         </Content>
       </Box>
     </Background>
@@ -36,14 +36,14 @@ const Background = styled.div`
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  z-index: 2;
 `;
 
 const Box = styled.div`
   position: absolute;
-  left: 30%;
-  right: 30%;
-  bottom: 30%;
+  left: 20%;
+  right: 20%;
+  bottom: 20%;
   top: 30%;
   text-align: center;
   border-radius: 15px;

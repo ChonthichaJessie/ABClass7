@@ -8,9 +8,12 @@ export const UserSupport = () => {
 
     if (!show) {
         return (
-            <HomeSupportUsButton className='buy-btn' type="submit" onClick={() => setShow(true)}>
-                Support us
-            </HomeSupportUsButton>
+            //Cancel using paypal
+            // <HomeSupportUsButton className='buy-btn' type="submit" onClick={() => setShow(true)}>
+            //     Support us
+            // </HomeSupportUsButton>
+            <a target="_blank" href = "https://buy.stripe.com/cN2bML22e1Fs0yAeUU"><HomeSupportUsButton>Support us</HomeSupportUsButton></a>
+
         )
     }
 
