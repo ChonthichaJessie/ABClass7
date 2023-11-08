@@ -37,7 +37,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "echo abclass7.ca > ./build/CNAME && gh-pages -d build",
     "start": "react-scripts start",
     "dev": "PUBLIC_URL=/ npm start",
     "build": "react-scripts build",
