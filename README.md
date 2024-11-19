@@ -2,7 +2,7 @@
 
 ABClass7 is a website that provides Alberta Driving Class 7 Practice. Users can skip to the next question and back to the previous one. Users may support the team by making a Stripe donation. And give feedback if they see something that may be improved.
 
-## 🧁 Live websit: https://abclass7.ca/
+## 🧁 Live websit: https://abclass7.jtrail.ca/
 
 ## 🧁 Developer: Jessie Chonthicha
 
